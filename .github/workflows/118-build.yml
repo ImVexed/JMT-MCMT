@@ -5,10 +5,7 @@ name: 118 Build - Java CI with Gradle
 
 on:
   push:
-    branches: 
-      - 1.18-master
-      - "1.18-master"
-      - '1.18-master'
+    branches: [ master ]
 
 jobs:
   build:
