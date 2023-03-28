@@ -18,14 +18,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.17
-    - uses: actions/cache@v2
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
     - name: Grant execute permission buildscripts
       run: |
         chmod +x ./etc/buildscripts/1182build |
