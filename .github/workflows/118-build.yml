@@ -20,7 +20,7 @@ jobs:
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
-        java-version: 1.16
+        java-version: 1.17
     - uses: actions/cache@v2
       with:
         path: |
@@ -38,14 +38,10 @@ jobs:
       run: ./etc/buildscripts/1182build
     - name: Cleanup
       run: git reset --hard HEAD
-    - name: Publish to Discord
-      env: # Setup Webhook Thing
-        DEVEL_WEBHOOK_URL: ${{ secrets.DEVEL_WEBHOOK_URL }}
-      run: ./etc/buildscripts/upload
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: 1182-devel
+        name: 1192-devel
         path: build/libs/*
 
 
